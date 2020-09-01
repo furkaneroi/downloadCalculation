@@ -19,14 +19,21 @@ namespace down
 
         private void button1_Click(object sender, EventArgs e)
         {
-          
-            double hiz = Convert.ToDouble(textBox1.Text)*3600;
-            double size = Convert.ToDouble(textBox2.Text)*1024;
-            double time =size / hiz;
-            time = Math.Round(time, 2);
-            textBox3.Text=time.ToString();
 
-            
+            double speed = Convert.ToDouble(textBox1.Text) * 3600; //download speed entry
+            double size = Convert.ToDouble(textBox2.Text) * 1024; //file size entry
+            double time = size / speed; //the proccess to calculate the time that is left
+            time = Math.Round(time, 2); 
+
+
+            var timeSpan = TimeSpan.FromHours(time); //converting the double to timespan
+            int hours = timeSpan.Hours;
+            int minutes = timeSpan.Minutes;
+
+
+            textBox3.Text =Convert.ToString(hours)+" Saat "+Convert.ToString(minutes)+" Dakika" ;
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
