@@ -23,7 +23,7 @@ namespace down
             double speed = Convert.ToDouble(textBox1.Text) * 3600; //download speed entry
             double size = Convert.ToDouble(textBox2.Text) * 1024; //file size entry
             double time = size / speed; //the proccess to calculate the time that is left
-            time = Math.Round(time, 2); 
+            time = Math.Round(time, 2);
 
 
             var timeSpan = TimeSpan.FromHours(time); //converting the double to timespan
@@ -31,7 +31,7 @@ namespace down
             int minutes = timeSpan.Minutes;
 
 
-            textBox3.Text =Convert.ToString(hours)+" Saat "+Convert.ToString(minutes)+" Dakika" ;
+            textBox3.Text =Convert.ToString(hours)+" Hours "+Convert.ToString(minutes)+" Minutes" ;
 
 
         }
